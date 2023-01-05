@@ -7,10 +7,12 @@
   },
   "dependencies": {
     "@upstash/redis": "^1.18.5",
+    "ioredis": "^5.2.4",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "redis": "^4.5.1",
+    "swr": "^2.0.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
