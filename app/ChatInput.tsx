@@ -44,7 +44,10 @@ function ChatInput() {
       }).then(res => res.json());
     return [data.message, ...messages!];  
     };
-    await mutate(uploadMessageToUpstash,) 
+    await mutate(uploadMessageToUpstash,{
+      optimisticData: [message, ...messages!],
+      rollbackOnError: true,
+    }) 
   };
 
   return (
