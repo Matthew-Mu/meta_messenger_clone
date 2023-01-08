@@ -11,7 +11,7 @@ export const serverPusher = new Pusher({
 });
 
 export const clientPusher = new ClientPusher( 
-    process.env.PUSHER_APP_CLIENT! , {
+    process.env.NEXT_PUBLIC_PUSHER_APP_CLIENT!, {
     cluster: 'ap1',
     forceTLS: true,
 });

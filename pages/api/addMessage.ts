@@ -26,7 +26,7 @@ const {message} = req.body;
 
 const newMessage = {
     ...message,
-    breated_at: Date.now()
+    created_at: Date.now()
 }
 
 await redis.hset('messages', message.id, JSON.stringify(newMessage));
