@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { Message } from "../typings";
 
@@ -6,7 +7,8 @@ type Props = {
 };
 
 function MessageComponent({message}: Props) {
-    const isUser = true;
+    const {data: session} = useSession();
+    const isUser = session?.user?.email === message.email;
   return (
     <div className={`flex w-fit ${isUser && "ml-auto"}`}>
         <div className={`flex-shrink-0 ${isUser && "order-2"}`}>
@@ -30,7 +32,8 @@ function MessageComponent({message}: Props) {
             </div>
         
             <p className={`text-[0.65rem] italic px-2 text-gray-300 ${isUser ? 'text-right': 'text-left'}`}>
-                {/* {new Date(message.created_at).toLocaleString()} */}
+                {/* {new Date(message.created_at).toLocaleString()}
+                 */}
             </p>
             </div>
         </div>
